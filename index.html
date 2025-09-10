@@ -1,36 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./dist/output.css" rel="stylesheet">
-    <title>Document</title>
-</head>
-<body>
-    <nav class="flex flex-col sm:flex-row sm:text-center items-center justify-between p-6 bg-main-blue text-white shadow-lg mb-3">
-        <div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <title>Opportune, your best Job Tracker</title>
+  </head>
+  <body>
+    <nav
+      class="flex flex-col sm:flex-row sm:text-center items-center justify-between p-6 bg-main-blue text-white shadow-lg mb-3"
+    >
+      <div>
         <h1 class="text-xl font-bold mb-3">OpporTune</h1>
-        </div>
+      </div>
 
-        <ul class="flex sm:space-x-4 justify-center flex-col sm:flex-row text-center">
+      <ul
+        class="flex sm:space-x-4 justify-center flex-col sm:flex-row text-center"
+      >
         <li><a href="#" class="sm:p-4">Inicio</a></li>
         <li><a href="#" class="sm:p-4">Trabajos</a></li>
         <li><a href="#" class="sm:p-4">Contacto</a></li>
-        </ul>
+      </ul>
     </nav>
-    <div class="flex flex-col items-center mb-3">
-        <h1 id="title"class="text-3xl mb-3 font-medium font-sans">Agregar nuevo trabajo</h1>
-        <button id="changeTextButton" class="p-3 bg-blue-400 rounded-lg font-medium text-white max-w-sm">Agregar</button>
-    </div>
-    <div class="p-6 max-w-sm mx-auto bg-slate-200 rounded-lg shadow-sm hover:shadow-lg flex flex-col md:flex-row items-center space-x-4">
-      <div class="shrink-0">
-        <img class="h-12 w-12" src="https://via.placeholder.com/150" alt="Logo">
+    <main class="space-y-6 md:grid md:grid-cols-2 md:gap-8">
+      <div class="job-form px-6 md:col-span-1">
+        <div class="flex flex-col items-center space-y-6">
+          <h2
+            id="title"
+            class="text-3xl font-medium font-sans text-center mt-3"
+          >
+            Agregar nueva postulación
+          </h2>
+          <div
+            class="application-form-container border shadow-lg border-gray-300 rounded-md p-9 w-full lg:w-4/5"
+          >
+            <form class="flex flex-col space-y-4" action="">
+              <div class="space-y-2">
+                <label class="font-medium text-xl" for="empresa">
+                  Empresa
+                </label>
+                <input
+                  class="block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 focus:ring-blue-500"
+                  id="empresa"
+                  type="text"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <label class="font-medium text-xl" for="rol"> Rol </label>
+                <input
+                  class="block w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 focus:ring-blue-500"
+                  id="rol"
+                  type="text"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <label class="font-medium text-xl" for="estado"> Estado </label>
+
+                <select
+                  class="block w-full rounded-md border border-gray-300 py-2 pl-3 pr-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+                  id="estado"
+                >
+                  <option value="aplicado">Aplicado</option>
+                  <option value="entrevista">Entrevista</option>
+                  <option value="rechazado">Rechazado</option>
+                </select>
+              </div>
+
+              <button
+                type="submit"
+                id="changeTextButton"
+                class="px-4 py-2 bg-blue-600 rounded-md font-bold text-white hover:bg-blue-700 w-full focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                Guardar Postulación
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
-      <div>
-        <div class="text-xl font-medium text-black">Trabajo N°1</div>
-        <p class="text-gray-900">Esta oportunidad está hecha para Frontend Devs</p>
+      <div class="job-list px-6 md:col-span-1 space-y-4">
+        <h2 id="title" class="text-3xl font-medium font-sans text-center mt-3">
+          Mis postulaciones
+        </h2>
+        <table class="hidden md:table w-full text-sm text-left border-collapse">
+          <thead class="bg-gray-100">
+            <tr class="border-b">
+              <th>Empresa</th>
+              <th>Rol</th>
+              <th>Fecha</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td>Amazon</td>
+              <td>CEO</td>
+              <td>07/09/2025</td>
+              <td>
+                <span
+                  class="inline-flex items-center px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800"
+                  >Entrevista</span
+                >
+              </td>
+              <td class="space-x-4">
+                <a
+                  class="font-medium text-indigo-600 hover:text-indigo-900"
+                  href=""
+                  >Editar</a
+                >
+                <a
+                  class="font-medium text-indigo-600 hover:text-indigo-900"
+                  href=""
+                  >Eliminar</a
+                >
+              </td>
+            </tr>
+            <tr class="border-b">
+              <td>Netflix</td>
+              <td>Product Owner</td>
+              <td>12/04/2024</td>
+              <td>
+                <span
+                  class="inline-flex items-center px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800"
+                  >Aplicado</span
+                >
+              </td>
+              <td class="space-x-4">
+                <a
+                  class="font-medium text-indigo-600 hover:text-indigo-900"
+                  href=""
+                  >Editar</a
+                >
+                <a
+                  class="font-medium text-indigo-600 hover:text-indigo-900"
+                  href=""
+                  >Eliminar</a
+                >
+              </td>
+            </tr>
+            <tr class="border-b">
+              <td>Facebook</td>
+              <td>Jr Frontend</td>
+              <td>06/07/2025</td>
+              <td>
+                <span
+                  class="inline-flex items-center px-2 py-1 text-xs font-medium rounded-full bg-red-100 text-red-80"
+                  >Rechazado</span
+                >
+              </td>
+              <td class="space-x-4">
+                <a
+                  class="font-medium text-indigo-600 hover:text-indigo-900"
+                  href=""
+                  >Editar</a
+                >
+                <a
+                  class="font-medium text-indigo-600 hover:text-indigo-900"
+                  href=""
+                  >Eliminar</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="job-cards-container space-y-4 md:hidden">
+          <div
+            class="p-6 max-w-md mx-auto bg-slate-200 rounded-lg shadow-md hover:shadow-lg flex flex-row items-center space-x-4"
+          >
+            <div class="shrink-0">
+              <img
+                class="h-12 w-12"
+                src="https://via.placeholder.com/150"
+                alt="Logo"
+              />
+            </div>
+            <div class="space-y-2">
+              <p class="text-gray-900">
+                <span class="font-bold">Empresa: </span>Amazon
+              </p>
+              <p class="text-gray-900">
+                <span class="font-bold">Rol: </span>CEO
+              </p>
+              <p class="text-gray-900">
+                <span class="font-bold">Fecha: </span>07/09/2025
+              </p>
+              <p class="text-gray-900">
+                <span
+                  class="inline-flex items-center px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800"
+                  >Entrevista</span
+                >
+              </p>
+              <div class="space-x-4">
+                <a
+                  class="font-medium text-indigo-600 hover:text-indigo-900"
+                  href=""
+                  >Editar</a
+                >
+                <a
+                  class="font-medium text-indigo-600 hover:text-indigo-900"
+                  href=""
+                  >Eliminar</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="p-6 max-w-md mx-auto bg-slate-200 rounded-lg shadow-md hover:shadow-lg flex flex-row items-center space-x-4"
+          >
+            <div class="shrink-0">
+              <img
+                class="h-12 w-12"
+                src="https://via.placeholder.com/150"
+                alt="Logo"
+              />
+            </div>
+            <div class="space-y-2">
+              <p class="text-gray-900">
+                <span class="font-bold">Empresa: </span>Netflix
+              </p>
+              <p class="text-gray-900">
+                <span class="font-bold">Rol: </span>Product Owner
+              </p>
+              <p class="text-gray-900">
+                <span class="font-bold">Fecha: </span>12/04/2024
+              </p>
+              <p class="text-gray-900">
+                <span
+                  class="inline-flex items-center px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800"
+                  >Aplicado</span
+                >
+              </p>
+              <div class="space-x-4">
+                <a
+                  class="font-medium text-indigo-600 hover:text-indigo-900"
+                  href=""
+                  >Editar</a
+                >
+                <a
+                  class="font-medium text-indigo-600 hover:text-indigo-900"
+                  href=""
+                  >Eliminar</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="p-6 max-w-md mx-auto bg-slate-200 rounded-lg shadow-md hover:shadow-lg flex flex-row items-center space-x-4"
+          >
+            <div class="shrink-0">
+              <img
+                class="h-12 w-12"
+                src="https://via.placeholder.com/150"
+                alt="Logo"
+              />
+            </div>
+            <div class="space-y-2">
+              <p class="text-gray-900">
+                <span class="font-bold">Empresa: </span>Facebook
+              </p>
+              <p class="text-gray-900">
+                <span class="font-bold">Rol: </span>Jr Frontend
+              </p>
+              <p class="text-gray-900">
+                <span class="font-bold">Fecha: </span>06/07/2025
+              </p>
+              <p class="text-gray-900">
+                <span
+                  class="inline-flex items-center px-2 py-1 text-xs font-medium rounded-full bg-red-100 text-red-80"
+                  >Rechazado</span
+                >
+              </p>
+              <div class="space-x-4">
+                <a
+                  class="font-medium text-indigo-600 hover:text-indigo-900"
+                  href=""
+                  >Editar</a
+                >
+                <a
+                  class="font-medium text-indigo-600 hover:text-indigo-900"
+                  href=""
+                  >Eliminar</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
