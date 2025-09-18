@@ -1,15 +1,15 @@
 function JobListItem(props) {
 
-    let estiloEstado = " ";
+    let stateStyle = " ";
 
-    if (props.estado === "Entrevista") {
-    estiloEstado =
+    if (props.state === "Interview") {
+    stateStyle =
         "inline-flex items-center px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800";
-    } else if (props.estado === "Aplicado") {
-    estiloEstado =
+    } else if (props.state === "Applied") {
+    stateStyle =
         "inline-flex items-center px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800";
-    } else if (props.estado === "Rechazado") {
-    estiloEstado =
+    } else if (props.state === "Closed") {
+    stateStyle =
         "inline-flex items-center px-2 py-1 text-xs font-medium rounded-full bg-red-100 text-red-800";
     }
 
@@ -25,17 +25,17 @@ function JobListItem(props) {
         </div>
         <div className="space-y-2">
           <p className="text-gray-900">
-            <span className="font-bold">Empresa: </span>{props.empresa}
+            <span className="font-bold">company: </span>{props.company}
           </p>
           <p className="text-gray-900">
-            <span className="font-bold">Rol: </span>{props.rol}
+            <span className="font-bold">position: </span>{props.position}
           </p>
           <p className="text-gray-900">
-            <span className="font-bold">Fecha: </span>{props.fecha}
+            <span className="font-bold">date: </span>{props.date}
           </p>
           <p className="text-gray-900">
-            <span className={estiloEstado}>
-              {props.estado}
+            <span className={stateStyle}>
+              {props.state}
             </span>
           </p>
           <div className="space-x-4">
@@ -43,13 +43,13 @@ function JobListItem(props) {
               className="font-medium text-indigo-600 hover:text-indigo-900"
               href=""
             >
-              Editar
+              Edit
             </a>
             <a
               className="font-medium text-indigo-600 hover:text-indigo-900"
               href=""
             >
-              Eliminar
+              Delete
             </a>
           </div>
         </div>

@@ -10,9 +10,9 @@ function Nav() {
       <ul
         class="flex sm:space-x-4 justify-center flex-col sm:flex-row text-center"
       >
-        <li><a href="#" class="sm:p-4">Inicio</a></li>
-        <li><a href="#" class="sm:p-4">Trabajos</a></li>
-        <li><a href="#" class="sm:p-4">Contacto</a></li>
+        <li><a href="#" class="sm:p-4">Home</a></li>
+        <li><a href="#" class="sm:p-4">Applications</a></li>
+        <li><a href="#" class="sm:p-4">Contact</a></li>
       </ul>
     </nav>
     );
